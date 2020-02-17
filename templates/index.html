@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>flask_with_plotly_By_ESA</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{{ url_for(‘assets’, filename=’css/basic.css’) }}">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 
 </head>
 <body>
+
+<nav class="navbar navbar-default navbar-static-top">
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/plot">plot</a></li>
+    <li role="presentation"><a href="/">profile</a></li>
+  </ul>
+
+</nav>
 
 {% block content %}
 
@@ -21,7 +32,7 @@
     <h1>Hello, how have u been so far?</h1>
     <p>Great, take a look~</p>
     <p><a class="btn btn-primary btn-lg" href="/plot" role="button"> check out</a></p>
-  </div>
+</div>
 
 {% endblock %}
 

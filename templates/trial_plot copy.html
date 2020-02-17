@@ -1,0 +1,59 @@
+{% extends "index.html" %} 
+
+{% block content %}
+
+<h1> fig1</h1>
+<!-- put the filter here -->
+
+<div>
+
+<div class="chart" id="bargraph">
+    <script>
+        var graphs = {{plot | safe}};
+        Plotly.newPlot('bargraph',graphs, {width: '48%' ,showlegend:true,
+        title: {
+            text:'Plot Title1',
+            font: {
+              family: 'Courier New, monospace',
+              size: 44
+            }}});
+    </script>
+</div>
+
+<!-- put the filter here -->
+<div class="chart2" id="bargraph2">
+    <script>
+        var graphs2 = {{plot2 | safe}};
+        Plotly.newPlot('bargraph2',graphs2,{ 
+            width: '48%',
+            updatemenus: [{
+                y: 0.8,
+                yanchor: 'top',
+                buttons: [{
+                    method: 'restyle',
+                    args: ['line.color', 'red'],
+                    label: 'red'
+                }, {
+                    method: 'restyle',
+                    args: ['line.color', 'blue'],
+                    label: 'blue'
+                }, {
+                    method: 'restyle',
+                    args: ['line.color', 'green'],
+                    label: 'green'
+                }],
+                    }],
+                    title: {
+                        text:'Plot Title2',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 24
+                        }},
+                    showlegend:true
+                         });
+    </script>
+
+</div>
+</div>
+
+{% endblock %}
